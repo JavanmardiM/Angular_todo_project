@@ -1,0 +1,51 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>To-Do List</h1>
+    <input class="new-todo" #titleInput placeholder="What needs to be done?" (keyup.enter)="add($event)" autofocus>
+  </header>
+  <!-- This section should be hidden by default and shown when there are todos -->
+  <section class="main">
+    <input id="toggle-all" class="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+
+
+      <li *ngFor="let item of toDoList; let i = index" [ngClass]="{'completed': item.done===true, 'editing': isEditing && i==selectedIndex}">
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="setDone(item)" [checked]="item.done">
+          <label (click)="enableEdit(i)" > {{item.title}}</label>
+          <button class="destroy" (click)="delete(item.id)"></button>
+        </div>
+        <input class="edit" [value]="item.title" (keyup.enter)="editTitle($event, item)">
+      </li>
+    </ul>
+  </section>
+  <!-- This footer should hidden by default and shown when there are todos -->
+  <footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong>{{toDoList?.length}}</strong> item left</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+      <li>
+        <a class="selected" (click)="all()">All</a>
+      </li>
+      <li>
+        <!-- <a href="#/active">Active</a> -->
+        <a (click)="active()">Active</a>
+      </li>
+      <li>
+        <!-- <a href="#/completed">Completed</a> -->
+        <a (click)="completed()">Completed</a>
+      </li>
+      <button (click)="logout()">Logout</button>
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed">Clear completed</button>
+  </footer>
+</section>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+</footer>
+
+
+

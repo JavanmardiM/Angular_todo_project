@@ -1,0 +1,27 @@
+
+<div class="container">
+  <form class="register" [formGroup]="form">
+    <h3 style="text-align: center;padding-bottom: 15px;">{{lable}}</h3>
+
+
+    <fieldset>
+      <input style="width:93%" formControlName="email" placeholder="email" type="text"  required autofocus>
+    </fieldset>
+    <fieldset>
+      <input style="width:93%" formControlName="password" placeholder="password" type="text"  required>
+    </fieldset>
+
+    <fieldset *ngIf="!showLoginBtn">
+      <button class="registerButtonSubmit" name="submit" type="button"  (click)="register()">register</button>
+    </fieldset>
+    <fieldset *ngIf="showLoginBtn">
+      <button class="registerButtonSubmit" name="submit" type="button"  (click)="login()">login</button>
+    </fieldset>
+    <fieldset *ngIf="!showLoginBtn">
+      <button class="registerButton" name="btn" type="button" (click)="switchToLogin()">switch to login</button>
+    </fieldset>
+    <fieldset *ngIf="showLoginBtn">
+      <button class="registerButton" name="btn" type="button" (click)="switchToReg()">switch to Register</button>
+    </fieldset>
+  </form>
+</div>

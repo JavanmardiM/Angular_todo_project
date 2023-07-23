@@ -1,0 +1,54 @@
+[
+  {
+    "email": "test@test.com",
+    "password": "1234"
+  },
+  {
+    "email": "admin@test.com",
+    "password": "admin"
+  },
+  {
+    "email": "admin@aaaa.com",
+    "password": "admin"
+  },
+  {
+    "email": "test11@test.com",
+    "password": "12344324"
+  },
+  {
+    "email": "m@m",
+    "password": "123456"
+  },
+  {
+    "email": "1",
+    "password": "11"
+  },
+  {
+    "email": "2",
+    "password": "2"
+  },
+  {
+    "email": "3",
+    "password": "3"
+  },
+  {
+    "email": "4",
+    "password": "4"
+  },
+  {
+    "email": "6",
+    "password": "6"
+  },
+  {
+    "email": "9",
+    "password": "9"
+  },
+  {
+    "email": "t",
+    "password": "t"
+  },
+  {
+    "email": "g",
+    "password": "g"
+  }
+]
